@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AutoGrade - Monash成绩计算器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AutoGrade <span class="subtitle">成绩计算器</span></h1>
+    </header>
+    
+    <div class="status-container">
+      <div id="status-message">
+        等待获取成绩数据...
+      </div>
+    </div>
+    
+    <div id="grade-summary" class="summary-container hidden">
+      <div class="current-grade">
+        <div class="grade-number" id="current-percentage">--%</div>
+        <div class="grade-label">当前成绩</div>
+        <div class="grade-level" id="grade-level">--</div>
+      </div>
+      
+      <div class="weight-info">
+        <div class="weight-bar">
+          <div id="completed-weight-bar" class="completed-weight"></div>
+        </div>
+        <div class="weight-label">
+          已完成: <span id="completed-weight">--%</span> / 
+          总权重: <span id="total-weight">--%</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="assignments-container" class="hidden">
+      <h2>作业详情</h2>
+      <div class="assignments-list" id="assignments-list">
+        <!-- 动态填充作业列表 -->
+      </div>
+    </div>
+    
+    <div id="predictions-container" class="predictions-container hidden">
+      <h2>预测分析</h2>
+      <div class="prediction-message" id="prediction-message">
+        <!-- 动态填充预测信息 -->
+      </div>
+      <table class="prediction-table">
+        <thead>
+          <tr>
+            <th>成绩等级</th>
+            <th>需要平均得分</th>
+          </tr>
+        </thead>
+        <tbody id="prediction-table-body">
+          <!-- 动态填充预测表格 -->
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="footer">
+      <div id="error-message" class="error hidden"></div>
+      <button id="refresh-button">刷新数据</button>
+    </div>
+  </div>
+  
+  <script src="../scripts/utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html> 
